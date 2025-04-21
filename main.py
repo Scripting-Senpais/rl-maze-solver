@@ -3,8 +3,8 @@ import numpy as np
 from gym_robotics_custom import RoboGymObservationWrapper
 
 if __name__ == '__main__':
-    env_name = "PointMaze_UMaze-v3"
-    max_episode_steps = 100
+    env_name = "AntMaze_UMaze-v4"
+    max_episode_steps = 1000
 
     STRIGHT_MAZE = [[1, 1, 1, 1, 1],
                     [1, 0, 0, 0, 1],
