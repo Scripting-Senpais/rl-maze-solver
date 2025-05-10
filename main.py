@@ -1,6 +1,7 @@
 import gymnasium as gym
 import numpy as np
 from gym_robotics_custom import RoboGymObservationWrapper
+from model import *
 from agent import Agent
 from buffer import ReplayBuffer
 
@@ -28,6 +29,8 @@ if __name__ == '__main__':
     env = gym.make(env_name, max_episode_steps=max_episode_steps, maze_map=STRIGHT_MAZE)
     env = RoboGymObservationWrapper(env)
 
+    #critic = Critic(1, 1, 1)
+
     observation, info = env.reset()
     observation_size = observation.shape[0]
 
@@ -36,8 +39,10 @@ if __name__ == '__main__':
     
     memory = ReplayBuffer(replay_buffer_size, input_size=observation_size , n_actions=env.action_space.shape[0])
 
-    for i in range(100):
-        action = env.action_space.sample()
-        env.step(action)
+    # observation, info = env.reset()
 
-    print(observation)
+    # for i in range(100):
+    #     action = env.action_space.sample()
+    #     env.step(action)
+
+    # print(observation)
